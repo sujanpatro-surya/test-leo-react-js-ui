@@ -1,27 +1,46 @@
+import {
+  PasswordInputField,
+  TextInputField,
+} from "@surya-digital/leo-reactjs-material-ui";
 import logo from "../logo.svg";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
+import { Stack } from "@mui/material";
 
-const HomePage = (): ReactElement => {
+export const HomePage = (): ReactElement => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <a href="/second">
+      <div className="Logo-section">
+        <div className="Logo-container">
           <img src={logo} className="App-logo" alt="logo" />
-        </a>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        </div>
+      </div>
+      <Stack className="Form-section" spacing={elementPadding}>
+        <TextInputField
+          name="Email Field"
+          value={email}
+          type="email"
+          onTextChange={setEmail}
+          label="Email"
+          style={{
+            width: fieldWidth,
+          }}
+        />
+        <PasswordInputField
+          name="Password Field"
+          value={password}
+          onTextChange={setPassword}
+          label="Password"
+          style={{
+            width: fieldWidth,
+          }}
+        />
+      </Stack>
     </div>
   );
 };
 
-export default HomePage;
+const fieldWidth = "360px";
+const elementPadding = "16px";
