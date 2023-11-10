@@ -7,7 +7,7 @@ export const HomePage = (): ReactElement => {
   return (
     <Box sx={{ display: "flex", minHeight: "100vh" }}>
       <LogoLayout />
-      <AuthLayout authType="SignUp" />
+      <AuthLayout />
     </Box>
   );
 };

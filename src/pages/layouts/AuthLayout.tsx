@@ -8,13 +8,14 @@ import { ReactElement, useState } from "react";
 import { typographyStyles } from "../../theme/typography/typographyStyles";
 import { lightColorPalette } from "../../theme/color-palette/lightColorPalette";
 
-const AuthLayout = ({ authType }: authLayoutProps): ReactElement => {
+const AuthLayout = (): ReactElement => {
+  const [authSelection, setAuthSelection] = useState<authType>("SignIn");
   const fieldWidth = "360px";
   const contentPadding = "32px";
   const fieldStyle = { width: fieldWidth };
 
   const getAuthTypeText = (reverse: boolean = false): string => {
-    let isSignIn: Boolean = authType === "SignIn";
+    let isSignIn: Boolean = authSelection === "SignIn";
     if (reverse) isSignIn = !isSignIn;
     return isSignIn ? "Sign In" : "Sign Up";
   };
@@ -25,7 +26,7 @@ const AuthLayout = ({ authType }: authLayoutProps): ReactElement => {
 
   const ConfirmPasswordConditionalField = (): ReactElement => {
     const [confirmPassword, setConfirmPassword] = useState("");
-    return authType === "SignUp" ? (
+    return authSelection === "SignUp" ? (
       <PasswordInputField
         name="Confirm Password Field"
         value={confirmPassword}
@@ -78,15 +79,17 @@ const AuthLayout = ({ authType }: authLayoutProps): ReactElement => {
 
   const AuthLayoutFooter = (): ReactElement => {
     const prefixText =
-      authType === "SignUp"
+      authSelection === "SignUp"
         ? "Already have an account?"
         : "Don't have an account?";
     const SuffixTextButton = (
       <Link
-        href=""
         underline="none"
         color={lightColorPalette.primary[400]}
-        style={typographyStyles.button3}
+        style={{ ...typographyStyles.button3, cursor: "pointer" }}
+        onClick={() => {
+          setAuthSelection(authSelection === "SignUp" ? "SignIn" : "SignUp");
+        }}
       >
         {getAuthTypeText(true)}
       </Link>

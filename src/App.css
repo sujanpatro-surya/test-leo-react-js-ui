@@ -1,9 +1,3 @@
-
-.Logo-container {
-  display: flex;
-  justify-content: center;
-}
-
 .App-logo {
   height: 500px;
   width: 500px;
@@ -12,7 +6,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 40s linear;
   }
 }
 
