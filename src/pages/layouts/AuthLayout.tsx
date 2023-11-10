@@ -82,7 +82,7 @@ const AuthLayout = (): ReactElement => {
       authSelection === "SignUp"
         ? "Already have an account?"
         : "Don't have an account?";
-    const SuffixTextButton = (
+    const suffixTextButton = (
       <Link
         underline="none"
         color={lightColorPalette.primary[400]}
@@ -99,7 +99,7 @@ const AuthLayout = (): ReactElement => {
         <Box sx={typographyStyles.body3}>
           {prefixText}
           &nbsp;
-          {SuffixTextButton}
+          {suffixTextButton}
         </Box>
       </>
     );
