@@ -7,7 +7,7 @@ export function pxToRem(value: number): string {
   return `${value / 16}rem`;
 }
 
-const PRIMARY_FONT = "Lato";
+const PRIMARY_FONT = "Inter";
 
 const h1 = {
   fontWeight: 700,

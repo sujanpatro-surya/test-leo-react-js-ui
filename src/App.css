@@ -1,6 +1,7 @@
 .App {
   display: flex;
   min-height: 100vh;
+  /* justify-content: stretch; */
 }
 
 .Logo-section {
@@ -8,7 +9,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 60%;
+  width: 55%;
 }
 
 .Logo-container {
@@ -20,14 +21,6 @@
   height: 500px;
   width: 500px;
   pointer-events: none;
-}
-
-.Form-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 40%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
