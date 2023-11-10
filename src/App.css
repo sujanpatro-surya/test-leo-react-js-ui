@@ -1,16 +1,3 @@
-.App {
-  display: flex;
-  min-height: 100vh;
-  /* justify-content: stretch; */
-}
-
-.Logo-section {
-  background-color: #282c34;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 55%;
-}
 
 .Logo-container {
   display: flex;

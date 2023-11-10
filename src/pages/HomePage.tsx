@@ -1,16 +1,13 @@
 import { ReactElement } from "react";
-import logo from "../logo.svg";
-import AuthLayout from "./common/AuthLayout";
+import AuthLayout from "./layouts/AuthLayout";
+import { LogoLayout } from "./layouts/LogoLayout";
+import { Box } from "@mui/material";
 
 export const HomePage = (): ReactElement => {
   return (
-    <div className="App">
-      <div className="Logo-section">
-        <div className="Logo-container">
-          <img src={logo} className="App-logo" alt="logo" />
-        </div>
-      </div>
+    <Box sx={{ display: "flex", minHeight: "100vh" }}>
+      <LogoLayout />
       <AuthLayout authType="SignUp" />
-    </div>
+    </Box>
   );
 };
