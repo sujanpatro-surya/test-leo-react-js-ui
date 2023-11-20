@@ -78,11 +78,25 @@ const AuthLayout = (): ReactElement => {
   };
 
   const AuthLayoutFooter = (): ReactElement => {
-    const prefixText =
-      authSelection === "SignUp"
-        ? "Already have an account?"
-        : "Don't have an account?";
+    const prefixText = (
+      <Box sx={typographyStyles.body3} display={"inline"}>
+        {authSelection === "SignUp"
+          ? "Already have an account?"
+          : "Don't have an account?"}
+      </Box>
+    );
     const suffixTextButton = (
+      // <Button
+      //   name={""}
+      //   title={getAuthTypeText()}
+      //   size={"small"}
+      //   variant="plain-color"
+      //   onClick={(): void => {}}
+      //   style={{
+      //     padding: "0px",
+      //     height: "0px",
+      //   }}
+      // />
       <Link
         underline="none"
         color={lightColorPalette.primary[400]}
@@ -96,7 +110,7 @@ const AuthLayout = (): ReactElement => {
     );
     return (
       <>
-        <Box sx={typographyStyles.body3}>
+        <Box>
           {prefixText}
           &nbsp;
           {suffixTextButton}
